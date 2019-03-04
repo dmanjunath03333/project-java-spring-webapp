@@ -25,7 +25,7 @@ agent any
     
     stage ('Deploy') {
       steps {
-        sh "java -jar target/my-app-1.0-SNAPSHOT.jar"
+        sh "java -jar target/ROOT-1.0.war"
       }
     }
     
@@ -33,7 +33,7 @@ agent any
      
       steps { 
        
-        sh 'curl -X PUT -u admin:password -T target/my-app-1.0-SNAPSHOT.jar "http://34.220.250.148:8081/artifactory/libs-snapshot-local/my-app-1.0-SNAPSHOT.jar" '
+        sh 'curl -X PUT -u admin:password -T target/ROOT-1.0.war "http://34.220.250.148:8081/artifactory/libs-snapshot-local/ROOT-1.0.war" '
       }
     }
       
